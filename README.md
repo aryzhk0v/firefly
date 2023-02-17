@@ -23,7 +23,16 @@ mv db.env.example .db.env
 docker-compose -f docker-compose.yml up -d
 ```
 ## Backups
-https://docs.firefly-iii.org/firefly-iii/advanced-installation/backup/
+### Set up
+
+Add to `/etc/crontab`
+```
+27 0 * * * your_username /home/your_username/repos/firefly/firefly-iii-backuper.sh backup /home/your_username/backups/firefly/$(date +\%F).tar >> /var/log/firefly-iii-backuper.log 2>&1
+```
+### Restore
+```
+/home/your_username/repos/firefly/firefly-iii-backuper.sh restore /home/your_username/backups/firefly/backup_filename.tar
+```
 
 ## Notes
 
