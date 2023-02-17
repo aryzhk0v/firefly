@@ -16,7 +16,7 @@ mv env-db.example .env-db
 - TZ
 - DB_PASSWORD
 - APP_URL  
-`.env-db`
+`.env-db`:
 - MYSQL_PASSWORD
 4. Start containers
 ```
